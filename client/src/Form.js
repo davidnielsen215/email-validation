@@ -66,7 +66,7 @@ export class Form extends Component {
                     postStatus: `Succesfully posted: ${this.state.username}`
                 })
                 this.setState({
-                    postId: `id: ${res.data._id}`
+                    postId: `ID: ${res.data._id}`
                 })
             }).catch(err => {
                 console.log('Failed to post contact')
