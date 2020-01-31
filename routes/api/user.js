@@ -5,23 +5,29 @@ const router = express.Router();
 const User = require('../../models/User')
 
 // @router Get api/user
-// @desc Get All user
+// @desc Get single user
 // @access Public
-router.get('/', (req, res) => {
-    User.find()
-        .sort({ date: -1 })
-        .then(user => res.json(user)) 
+router.post('/retrieve', (req, res) => {
+    console.log(req.body.name)
+    User.find({name : req.body.name})
+    // .sort({ name: req.params.data.name })
+        .then(user => res.send(user)) 
+        
+        .catch(err => res.status(404).json({success: false}))
+    // res.json(user.filter(user => user.name === req.body.name))
 })
 
 // @router Post api/user
 // @desc Create user
 // @access Public
 router.post('/', (req, res) => {
+    // console.log(req.body.name)
     const newUser = new User({
         name: req.body.name,
         // id: req.body.id
     })
     newUser.save().then(user => res.json(user))
+    .catch(err => res.status(404).json({success: false}))
 })
 
 // @router delete api/user
@@ -36,10 +42,10 @@ router.delete('/:id', (req, res) => {
 // @router update api/user
 // @desc update API user
 // @access Public
-router.put('/:num', (req, res) => {
-    User.findOneAndUpdate({num: req.params.num}, {isValidated: true}, {useFindAndModify: false})
-    .then(res.json({success: true}))
-    .then(res.json(user => res.json(user)))
+router.put('/', (req, res) => {
+    User.findOneAndUpdate({name: req.body.name}, {isValidated: true}, {useFindAndModify: false})
+    
+    .then(user => res.send(user)) 
     .catch(err => res.status(404).json({success: false}))
 })
 
