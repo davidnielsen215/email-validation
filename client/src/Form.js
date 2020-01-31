@@ -121,7 +121,7 @@ export class Form extends Component {
                 </div>
                 
                 <div className='container'>
-                    <h2>Submit Contact</h2>
+                    <h2>Create Contact</h2>
                     <input placeholder='username' onChange={this.handleChange('username')} className='input'></input> 
                     <br/>
                     <button className='button' onClick={this.onSubmit2}>POST</button>
@@ -129,7 +129,7 @@ export class Form extends Component {
                     <h3>{this.state.postId}</h3>
                 </div>
                 <div className='container'>
-                    <h2>Validate Customer</h2>
+                    <h2>Validate Contact</h2>
                     <input placeholder='username' onChange={this.handleChange('editUser')} className='input'></input> 
                     <br/>
                     <button className='button' onClick={this.onSubmit3}>VALIDATE</button>
