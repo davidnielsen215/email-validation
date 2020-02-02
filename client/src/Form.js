@@ -110,7 +110,7 @@ export class Form extends Component {
                 <h1 style={{backgroundColor: 'black', height: '6vh', padding: '15px'}}>Email API validation</h1>
             <div className='app'>
                 <div className='container'>
-                    <h2>Retrieve Contact ID</h2>
+                    <h2>Retrieve Contact Properties</h2>
                     <input placeholder='username' onChange={this.handleChange('userSearch')} className='input'></input> 
                     <br/>
                     <button className='button' onClick={this.onSubmit}>RETRIEVE</button>
