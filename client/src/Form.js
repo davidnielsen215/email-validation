@@ -52,12 +52,13 @@ export class Form extends Component {
     
 
         createUserApi = () => {
+            const port = process.env.Port || 5000
 
             const recipient = this.state.username
                     const sender = 'test@bestdealretailer.com'
                     const subject = 'Validate your Email'
                     const text = 'Thank you for signing up with Best Deal Retailer. Please click the link and follow the instructions to validate your account'
-                    fetch(`http://127.0.0.1:5000/send-email?recipient=${recipient}&sender=${sender}&topic=${subject}&text=${text}`) //query string url
+                    fetch(`http://127.0.0.1:${port}/send-email?recipient=${recipient}&sender=${sender}&topic=${subject}&text=${text}`) //query string url
                     .then(console.log('succesfully sent email'))
                       .catch(err => console.error(err))
         
