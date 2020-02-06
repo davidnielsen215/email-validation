@@ -19,7 +19,7 @@ export class Validate extends Component {
             console.log(err)
         })
         }
- 
+
     render() {
         return (
             <div>

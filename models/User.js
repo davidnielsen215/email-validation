@@ -6,9 +6,6 @@ const UserSchema = new Schema({
         type: 'string',
         required: 'true'
     },
-    num: {
-        type: 'number'
-    },
     date: {
         type: Date,
         default: Date.now
